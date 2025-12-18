@@ -2,7 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using api.Data; // Required for [ApiController] and ControllerBase
-using Microsoft.OpenApi.Models; //
+using Microsoft.OpenApi.Models;
+using UserProfile.Abstract;
+using UserProfile.Implements; //
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +16,7 @@ builder.Services.AddDbContext<DatabaseContext>(options =>
 
 // Controllers
 builder.Services.AddControllers();
+builder.Services.AddScoped<UserProfileAbstraction, UserProfileImplementation>();
 
 // Swagger / OpenAPI
 builder.Services.AddEndpointsApiExplorer(); // Required for minimal APIs
