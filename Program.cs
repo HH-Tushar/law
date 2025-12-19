@@ -3,8 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using api.Data; // Required for [ApiController] and ControllerBase
 using Microsoft.OpenApi.Models;
-using UserProfile.Abstract;
-using UserProfile.Implements; //
+
+using ChatController.Abstract;
+using ChatController.Implementation;
+using UserController.Abstract;
+using UserController.Implements; //
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,7 +19,11 @@ builder.Services.AddDbContext<DatabaseContext>(options =>
 
 // Controllers
 builder.Services.AddControllers();
-builder.Services.AddScoped<UserProfileAbstraction, UserProfileImplementation>();
+//adding signalR
+builder.Services.AddSignalR();
+builder.Services.AddScoped<UserProfileAbstraction, UserProfileService>();
+builder.Services.AddScoped<ChatControllerAbstraction, ChatControllerImplementation>();
+
 
 // Swagger / OpenAPI
 builder.Services.AddEndpointsApiExplorer(); // Required for minimal APIs
@@ -30,6 +37,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 var app = builder.Build();
+app.MapHub<ChatHub>("/chathub");
 
 // Middleware
 if (app.Environment.IsDevelopment())

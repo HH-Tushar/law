@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tushar\\env\\sdk\\backend\\law\\law\\api.csproj": {}
+    "W:\\backend\\law_ai\\api\\api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tushar\\env\\sdk\\backend\\law\\law\\api.csproj": {
+    "W:\\backend\\law_ai\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tushar\\env\\sdk\\backend\\law\\law\\api.csproj",
+        "projectUniqueName": "W:\\backend\\law_ai\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "C:\\Users\\Tushar\\env\\sdk\\backend\\law\\law\\api.csproj",
+        "projectPath": "W:\\backend\\law_ai\\api\\api.csproj",
         "packagesPath": "C:\\Users\\Tushar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tushar\\env\\sdk\\backend\\law\\law\\obj\\",
+        "outputPath": "W:\\backend\\law_ai\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Tushar\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -44,6 +44,14 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Google.Apis.Auth": {
+              "target": "Package",
+              "version": "[1.73.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.9, )"
@@ -90,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
