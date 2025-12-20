@@ -12,6 +12,25 @@ using UserController.Implements; //
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+
+// 1️⃣ Add CORS (allow all origins for development)
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials() // required for SignalR
+            .SetIsOriginAllowed(_ => true); // allow all origins
+    });
+});
+
+
+// 2️⃣ Add SignalR
+builder.Services.AddSignalR();
+
 // Database
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<DatabaseContext>(options =>
@@ -19,8 +38,7 @@ builder.Services.AddDbContext<DatabaseContext>(options =>
 
 // Controllers
 builder.Services.AddControllers();
-//adding signalR
-builder.Services.AddSignalR();
+
 builder.Services.AddScoped<UserProfileAbstraction, UserProfileService>();
 builder.Services.AddScoped<ChatControllerAbstraction, ChatControllerImplementation>();
 
@@ -37,6 +55,15 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 var app = builder.Build();
+
+
+// 3️⃣ Use CORS
+app.UseCors("AllowAllOrigins");
+
+// 4️⃣ Enable WebSockets
+app.UseWebSockets();
+
+// 5️⃣ Map your hub
 app.MapHub<ChatHub>("/chathub");
 
 // Middleware
