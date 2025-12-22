@@ -56,7 +56,7 @@ namespace ChatController.Implementation
                 {
                     ConversationId = conversation.Id,
                     Sender = SenderType.User,
-                    Content = request.InitialMessage,
+                    Query = request.InitialMessage,
                     Timestamp = DateTime.UtcNow
                 };
 
