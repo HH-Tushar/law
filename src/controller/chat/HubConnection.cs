@@ -116,7 +116,7 @@ public class ChatHub : Hub
                 Query = "This is a dummy AI response. Replace with OpenAI later.",
                 Timestamp = DateTime.UtcNow
             };
- Console.WriteLine($"AI response ready to send in hub    :    {AiChatResponse.Response}");
+            Console.WriteLine($"AI response ready to send in hub    :    {AiChatResponse.Response}");
             await Clients.Group(content.ConversationId)
                 .SendAsync("ReceiveMessage", AiChatResponse);
         }
@@ -167,7 +167,7 @@ public class ChatHub : Hub
             }
 
             var responseJson = await httpResponse.Content.ReadAsStringAsync();
-         
+
             var aiResponse = JsonSerializer.Deserialize<AiChatResponse>(
                 responseJson,
                 new JsonSerializerOptions

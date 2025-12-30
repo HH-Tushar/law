@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "W:\\backend\\law_ai\\api\\api.csproj": {}
+    "C:\\Users\\Tushar\\env\\sdk\\backend\\law\\law\\api.csproj": {}
   },
   "projects": {
-    "W:\\backend\\law_ai\\api\\api.csproj": {
+    "C:\\Users\\Tushar\\env\\sdk\\backend\\law\\law\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "W:\\backend\\law_ai\\api\\api.csproj",
+        "projectUniqueName": "C:\\Users\\Tushar\\env\\sdk\\backend\\law\\law\\api.csproj",
         "projectName": "api",
-        "projectPath": "W:\\backend\\law_ai\\api\\api.csproj",
+        "projectPath": "C:\\Users\\Tushar\\env\\sdk\\backend\\law\\law\\api.csproj",
         "packagesPath": "C:\\Users\\Tushar\\.nuget\\packages\\",
-        "outputPath": "W:\\backend\\law_ai\\api\\obj\\",
+        "outputPath": "C:\\Users\\Tushar\\env\\sdk\\backend\\law\\law\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Tushar\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -98,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
